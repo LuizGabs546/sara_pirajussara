@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../backend"
+		},
+		{
+			"path": "../images"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../admin"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "public",
+		"liveServer.settings.port": 5502
+	}
+}

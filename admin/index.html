@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,initial-scale=1"
+    >
+
+    <title>ADM | Sara Pirajussara</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+
+<!-- ============================================================
+     LOGIN
+============================================================ -->
+
+<div
+    id="loginView"
+    class="login-page"
+>
+
+    <div class="login-card">
+
+        <img
+            src="../public/logo-sara-transparent.png"
+            alt="Sara Pirajussara"
+            class="logo"
+        >
+
+        <p class="eyebrow">
+            ÁREA RESTRITA
+        </p>
+
+        <h1>
+            Painel Administrativo
+        </h1>
+
+        <p class="muted">
+            Entre com seu acesso autorizado.
+        </p>
+
+
+        <form id="loginForm">
+
+            <label>
+                E-mail
+
+                <input
+                    id="email"
+                    type="email"
+                    autocomplete="username"
+                    required
+                >
+            </label>
+
+
+            <label>
+                Senha
+
+                <input
+                    id="password"
+                    type="password"
+                    autocomplete="current-password"
+                    required
+                >
+            </label>
+
+
+            <button type="submit">
+                Entrar
+            </button>
+
+
+            <p
+                id="loginError"
+                class="error"
+            ></p>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- ============================================================
+     APLICAÇÃO
+============================================================ -->
+
+<div
+    id="appView"
+    class="app hidden"
+>
+
+
+    <!-- ========================================================
+         SIDEBAR
+    ========================================================= -->
+
+    <aside class="sidebar">
+
+        <img
+            src="../public/logo-sara-transparent.png"
+            alt="Sara"
+            class="logo"
+        >
+
+
+        <div
+            id="userInfo"
+            class="user-info"
+        ></div>
+
+
+        <nav>
+
+            <button
+                class="nav-btn active"
+                data-page="eventsPage"
+            >
+                📅 Eventos
+            </button>
+
+
+            <button
+                class="nav-btn admin-only"
+                data-page="siteImagesPage"
+            >
+                🖼️ Fotos do site
+            </button>
+
+
+            <button
+                class="nav-btn prayer-only"
+                data-page="prayerPage"
+            >
+                🙏 Pedidos de oração
+            </button>
+
+        </nav>
+
+
+        <button
+            id="logoutBtn"
+            class="logout"
+        >
+            Sair
+        </button>
+
+    </aside>
+
+
+
+    <!-- ========================================================
+         CONTEÚDO
+    ========================================================= -->
+
+    <main class="main">
+
+
+        <!-- ====================================================
+             EVENTOS
+        ===================================================== -->
+
+        <section
+            id="eventsPage"
+            class="page"
+        >
+
+            <div class="page-head">
+
+                <div>
+
+                    <p class="eyebrow">
+                        GERENCIAMENTO
+                    </p>
+
+                    <h1>
+                        Eventos
+                    </h1>
+
+                    <p class="muted">
+                        Adicione, edite ou remova os eventos exibidos no site.
+                    </p>
+
+                </div>
+
+
+                <button id="newEventBtn">
+                    + Novo evento
+                </button>
+
+            </div>
+
+
+            <div
+                id="eventFormWrap"
+                class="panel hidden"
+            >
+
+                <h2 id="eventFormTitle">
+                    Novo evento
+                </h2>
+
+
+                <form
+                    id="eventForm"
+                    class="grid-form"
+                >
+
+                    <input
+                        type="hidden"
+                        id="eventId"
+                    >
+
+
+                    <label>
+                        Título
+
+                        <input
+                            id="eventTitle"
+                            required
+                            maxlength="150"
+                        >
+                    </label>
+
+
+                    <label>
+                        Data
+
+                        <input
+                            id="eventDate"
+                            type="date"
+                            required
+                        >
+                    </label>
+
+
+                    <label>
+                        Horário
+
+                        <input
+                            id="eventTime"
+                            type="time"
+                            required
+                        >
+                    </label>
+
+
+                    <label class="check">
+
+                        <input
+                            id="eventFeatured"
+                            type="checkbox"
+                        >
+
+                        Destaque
+
+                    </label>
+
+
+                    <label class="full">
+
+                        Descrição
+
+                        <textarea
+                            id="eventDescription"
+                            maxlength="2000"
+                            required
+                        ></textarea>
+
+                    </label>
+
+
+                    <label class="check">
+
+                        <input
+                            id="eventActive"
+                            type="checkbox"
+                            checked
+                        >
+
+                        Publicar no site
+
+                    </label>
+
+
+                    <div class="actions full">
+
+                        <button type="submit">
+                            Salvar evento
+                        </button>
+
+                        <button
+                            type="button"
+                            id="cancelEvent"
+                            class="secondary"
+                        >
+                            Cancelar
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <div
+                id="eventsList"
+                class="cards"
+            ></div>
+
+        </section>
+
+
+
+        <!-- ====================================================
+             FOTOS DO SITE
+        ===================================================== -->
+
+        <section
+            id="siteImagesPage"
+            class="page hidden"
+        >
+
+            <div class="page-head">
+
+                <div>
+
+                    <p class="eyebrow">
+                        PERSONALIZAÇÃO
+                    </p>
+
+                    <h1>
+                        Fotos do site
+                    </h1>
+
+                    <p class="muted">
+                        Altere as fotos que aparecem nas seções do site público.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="site-images-grid">
+
+
+                <!-- ==============================================
+                     SOBRE NÓS
+                =============================================== -->
+
+                <article class="site-image-card">
+
+                    <div class="site-image-info">
+
+                        <span class="tag">
+                            SOBRE NÓS
+                        </span>
+
+                        <h2>
+                            Foto da seção Sobre Nós
+                        </h2>
+
+                        <p>
+                            Esta imagem aparece ao lado do texto
+                            "Graça que transforma. Palavra que edifica.
+                            Cristo que restaura."
+                        </p>
+
+                    </div>
+
+
+                    <div class="site-image-preview-wrap">
+
+                        <div
+                            id="sobreNosPlaceholder"
+                            class="site-image-placeholder"
+                        >
+                            Nenhuma foto cadastrada
+                        </div>
+
+
+                        <img
+                            id="sobreNosPreview"
+                            class="site-image-preview hidden"
+                            alt="Foto da seção Sobre Nós"
+                        >
+
+                    </div>
+
+
+                    <div class="site-image-actions">
+
+                        <input
+                            id="sobreNosFile"
+                            type="file"
+                            accept="image/jpeg,image/png,image/webp"
+                        >
+
+
+                        <button
+                            type="button"
+                            id="saveSobreNos"
+                        >
+                            Salvar foto
+                        </button>
+
+
+                        <p
+                            id="sobreNosStatus"
+                            class="image-status"
+                        ></p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ==============================================
+                     REVISÃO DE VIDAS
+                =============================================== -->
+
+                <article class="site-image-card">
+
+                    <div class="site-image-info">
+
+                        <span class="tag">
+                            REVISÃO DE VIDAS
+                        </span>
+
+                        <h2>
+                            Foto do Revisão de Vidas
+                        </h2>
+
+                        <p>
+                            Esta imagem aparece na área do
+                            "Revisão de Vidas", no lugar do card
+                            visual "Um novo começo".
+                        </p>
+
+                    </div>
+
+
+                    <div class="site-image-preview-wrap">
+
+                        <div
+                            id="revisaoVidasPlaceholder"
+                            class="site-image-placeholder"
+                        >
+                            Nenhuma foto cadastrada
+                        </div>
+
+
+                        <img
+                            id="revisaoVidasPreview"
+                            class="site-image-preview hidden"
+                            alt="Foto do Revisão de Vidas"
+                        >
+
+                    </div>
+
+
+                    <div class="site-image-actions">
+
+                        <input
+                            id="revisaoVidasFile"
+                            type="file"
+                            accept="image/jpeg,image/png,image/webp"
+                        >
+
+
+                        <button
+                            type="button"
+                            id="saveRevisaoVidas"
+                        >
+                            Salvar foto
+                        </button>
+
+
+                        <p
+                            id="revisaoVidasStatus"
+                            class="image-status"
+                        ></p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ====================================================
+             PEDIDOS DE ORAÇÃO
+        ===================================================== -->
+
+        <section
+            id="prayerPage"
+            class="page hidden"
+        >
+
+            <div class="page-head">
+
+                <div>
+
+                    <p class="eyebrow">
+                        ACESSO RESTRITO
+                    </p>
+
+                    <h1>
+                        Pedidos de oração
+                    </h1>
+
+                    <p class="muted">
+                        Somente o usuário do Ministério de Oração possui acesso a esta área.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="prayerList"
+                class="prayers"
+            ></div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

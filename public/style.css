@@ -1,0 +1,2426 @@
+
+  /* SARA PIRAJUSSARA
+   CSS PRINCIPAL DO SITE
+   ============================================================ */
+
+/* ============================================================
+   01. RESET E CONFIGURAÇÕES GERAIS
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --dark: #080808;
+    --dark-soft: #0d0d0d;
+    --card: #111111;
+
+    --white: #ffffff;
+    --text-light: #e8e8e8;
+    --text: #e8e8e8;
+    --muted: #999999;
+
+    --gold: #c6a46a;
+    --gold-soft: #a88a55;
+
+    --border: #2c2c2c;
+    --soft: #0d0d0d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--text);
+    background: var(--dark);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================================================
+   02. HEADER
+   ============================================================ */
+
+.header {
+    height: 78px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+
+    background: rgba(10, 10, 10, 0.78);
+    backdrop-filter: blur(15px);
+    color: #fff;
+
+    transition: 0.3s;
+}
+
+.header.scrolled {
+    background: #101010;
+}
+
+/* ============================================================
+   03. LOGO
+   ============================================================ */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1;
+}
+
+.logo-mark {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.logo-mark img {
+    width: 30px;
+    height: 42px;
+    object-fit: contain;
+    display: block;
+}
+
+.logo strong {
+    display: block;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.logo small {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    margin-top: 4px;
+    opacity: 0.75;
+}
+
+/* ============================================================
+   04. MENU DE NAVEGAÇÃO
+   ============================================================ */
+
+.nav {
+    display: flex;
+    gap: 27px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.nav a {
+    opacity: 0.82;
+    transition: 0.2s;
+}
+
+.nav a:hover {
+    opacity: 1;
+    color: var(--gold);
+}
+
+/* ============================================================
+   05. BOTÃO "COMO CHEGAR"
+   ============================================================ */
+
+.header-button {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 10px 17px;
+    border-radius: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* ============================================================
+   06. MENU MOBILE
+   ============================================================ */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    color: #fff;
+    font-size: 25px;
+}
+
+/* ============================================================
+   07. HERO
+   ============================================================ */
+
+.hero {
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 75% 35%,
+            #5a4a32 0,
+            #1b1916 28%,
+            #090909 70%
+        );
+}
+
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            #080808 0%,
+            rgba(8, 8, 8, 0.8) 42%,
+            rgba(8, 8, 8, 0.22) 100%
+        );
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.55),
+            transparent 35%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin-left: 9%;
+    padding-top: 50px;
+}
+
+/* ============================================================
+   08. EYEBROW
+   ============================================================ */
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #ddd;
+}
+
+.eyebrow.dark {
+    color: #9a7b48;
+}
+
+/* ============================================================
+   09. TÍTULO DO HERO
+   ============================================================ */
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(46px, 6vw, 82px);
+    line-height: 1.02;
+    max-width: 900px;
+    font-weight: 600;
+}
+
+.hero h1 em {
+    font-weight: 600;
+    color: var(--gold);
+}
+
+.hero-text {
+    font-size: 17px;
+    color: #ddd;
+    max-width: 540px;
+    margin: 24px 0 30px;
+}
+
+/* ============================================================
+   10. BOTÕES
+   ============================================================ */
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 23px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.btn-light {
+    background: #fff;
+    color: #111;
+}
+
+.btn-light:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #111;
+}
+
+.btn-dark {
+    background: #fff;
+    color: #080808;
+}
+
+.btn-dark:hover {
+    background: var(--gold);
+    color: #080808;
+}
+
+/* ============================================================
+   11. SETA DE ROLAGEM
+   ============================================================ */
+
+.scroll-down {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    font-size: 25px;
+    color: #fff;
+    z-index: 2;
+    animation: bounce 1.8s infinite;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+/* ============================================================
+   12. SEÇÕES GERAIS
+   ============================================================ */
+
+.section {
+    padding: 120px 9%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9%;
+    align-items: center;
+}
+
+/* ============================================================
+   13. SOBRE
+   ============================================================ */
+
+.about {
+    background: var(--dark);
+    color: #fff;
+}
+
+/* ============================================================
+   14. IMAGEM / CARD
+   ============================================================ */
+
+.image-card {
+    position: relative;
+    height: 560px;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.photo-1 {
+    background:
+        linear-gradient(
+            145deg,
+            #393329,
+            #171512 45%,
+            #85704f
+        );
+}
+
+/* ============================================================
+   15. BADGE
+   ============================================================ */
+
+.image-badge {
+    position: absolute;
+    bottom: 28px;
+    right: -25px;
+    background: #111;
+    padding: 20px 25px;
+    box-shadow: 0 15px 40px #0002;
+    border: 1px solid #2c2c2c;
+}
+
+.image-badge strong,
+.image-badge span {
+    display: block;
+}
+
+.image-badge span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ============================================================
+   16. TÍTULOS DAS SEÇÕES
+   ============================================================ */
+
+.section-copy h2,
+.section-heading h2,
+.location h2,
+.cta h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.08;
+    margin-bottom: 22px;
+}
+
+.section-copy > p:not(.eyebrow) {
+    color: #999;
+    margin-bottom: 17px;
+    max-width: 560px;
+}
+
+/* ============================================================
+   17. LINKS
+   ============================================================ */
+
+.text-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 13px;
+    border-bottom: 1px solid #3a3a3a;
+    padding-bottom: 5px;
+    color: #fff;
+}
+
+.text-link:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+/* ============================================================
+   18. SEÇÕES ESCURAS
+   ============================================================ */
+
+.dark-section {
+    background: #0d0d0d;
+    color: #fff;
+    padding: 110px 9%;
+}
+
+/* ============================================================
+   19. CABEÇALHO DAS SEÇÕES
+   ============================================================ */
+
+.section-heading {
+    max-width: 750px;
+    margin-bottom: 50px;
+}
+
+.section-heading.centered {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-heading p:not(.eyebrow) {
+    color: #999;
+}
+
+/* ============================================================
+   20. CARDS / SERVIÇOS
+   ============================================================ */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.service-card {
+    padding: 40px;
+    background: #111;
+    border: 1px solid #2c2c2c;
+    min-height: 260px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.service-card.featured {
+    background:
+        linear-gradient(
+            145deg,
+            #17130e,
+            #111
+        );
+    border-color: #665338;
+}
+
+.service-card span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #b9a074;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin: 22px 0 10px;
+}
+
+.service-card > strong {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.service-card p {
+    color: #999;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.service-card:hover {
+    border-color: #4a4a4a;
+}
+
+/* ============================================================
+   21. EVENTOS
+   ============================================================ */
+
+.events {
+    background: var(--dark);
+    color: #fff;
+    padding: 110px 6%;
+    display: block;
+}
+
+.events .section-heading {
+    margin-bottom: 45px;
+}
+
+.events .section-heading p:not(.eyebrow) {
+    color: #999;
+}
+
+/* ============================================================
+   22. GRID DOS EVENTOS
+   ============================================================ */
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   23. CARD DE EVENTO
+   ============================================================ */
+
+.event-card {
+    background: #111;
+}
+
+.event-simple-card {
+    min-height: 178px;
+    padding: 30px;
+    border: 1px solid #303030;
+    border-radius: 20px;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.event-simple-card:hover {
+    transform: translateY(-4px);
+    border-color: #555;
+    background: #151515;
+}
+
+.event-simple-top span {
+    display: block;
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.event-simple-card h3 {
+    color: #fff;
+    font-size: 30px;
+    line-height: 1.15;
+    margin: 20px 0 16px;
+}
+
+.event-time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #aaa;
+    font-size: 16px;
+}
+
+.clock-icon {
+    color: var(--gold);
+    font-size: 25px;
+    line-height: 1;
+}
+
+.event-actions {
+    max-width: 1240px;
+    margin: 40px auto 0;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.event-action {
+    min-height: 62px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 27px;
+    border: 1px solid #303030;
+    border-radius: 34px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.event-action:hover {
+    border-color: #a0a0a0;
+    background: #111;
+    transform: translateY(-2px);
+}
+
+.event-action.primary {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #111;
+}
+
+.event-action.primary:hover {
+    background: #d8bb82;
+    border-color: #d8bb82;
+}
+
+.action-icon {
+    font-size: 22px;
+    line-height: 1;
+}
+
+/* ============================================================
+   24. REVISÃO DE VIDAS
+   ============================================================ */
+
+.revisao-vidas {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 6%;
+    background:
+        radial-gradient(
+            circle at 75% 25%,
+            #292015 0%,
+            #12100d 28%,
+            #080808 70%
+        );
+    color: #fff;
+}
+
+.revisao-vidas::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    right: -180px;
+    top: -220px;
+    border-radius: 50%;
+    background: rgba(198, 164, 106, 0.08);
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+.revisao-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.revisao-content {
+    max-width: 650px;
+}
+
+.revisao-content .eyebrow {
+    color: var(--gold);
+}
+
+.revisao-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(50px, 6vw, 82px);
+    line-height: 0.98;
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+.revisao-content h2 em {
+    display: block;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.revisao-subtitle {
+    max-width: 560px;
+    color: #fff;
+    font-size: 21px;
+    line-height: 1.45;
+    margin-bottom: 16px;
+}
+
+.revisao-text {
+    max-width: 560px;
+    color: #999;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.btn-revisao {
+    background: var(--gold);
+    color: #080808;
+    border: 1px solid var(--gold);
+    gap: 14px;
+    padding: 15px 24px;
+}
+
+.btn-revisao span {
+    font-size: 20px;
+    line-height: 1;
+    transition: transform 0.25s ease;
+}
+
+.btn-revisao:hover {
+    background: #d8bb82;
+    border-color: #d8bb82;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(198, 164, 106, 0.18);
+}
+
+.btn-revisao:hover span {
+    transform: translateX(4px);
+}
+
+/* Card visual */
+
+.revisao-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.revisao-card {
+    position: relative;
+    width: min(100%, 470px);
+    min-height: 500px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #252018 0%,
+            #12100d 48%,
+            #080808 100%
+        );
+
+    border: 1px solid #4b3c28;
+    border-radius: 4px;
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.45),
+        inset 0 0 80px rgba(198, 164, 106, 0.04);
+}
+
+.revisao-card::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(198, 164, 106, 0.2);
+    border-radius: 50%;
+}
+
+.revisao-card::after {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(198, 164, 106, 0.13);
+    border-radius: 50%;
+}
+
+.revisao-card-top,
+.revisao-card-bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: #b9a074;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.revisao-card-center {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.revisao-symbol {
+    display: block;
+    color: var(--gold);
+    font-size: 35px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 25px rgba(198, 164, 106, 0.3);
+}
+
+.revisao-card-center h3 {
+    font-family: "Playfair Display", serif;
+    color: #fff;
+    font-size: clamp(42px, 5vw, 62px);
+    line-height: 0.95;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.revisao-card-center p {
+    color: #999;
+    font-size: 14px;
+}
+
+/* ============================================================
+   25. INSTAGRAM
+   ============================================================ */
+
+.instagram-section {
+    background: #080808;
+    color: #fff;
+    padding: 110px 6%;
+    overflow: hidden;
+}
+
+.instagram-header {
+    max-width: 1240px;
+    margin: 0 auto 45px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.instagram-title .eyebrow {
+    color: var(--gold);
+    margin-bottom: 14px;
+}
+
+.instagram-title h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(52px, 6vw, 78px);
+    line-height: 0.95;
+    margin-bottom: 10px;
+}
+
+.instagram-username {
+    display: inline-block;
+    color: #999;
+    font-size: 15px;
+    transition: 0.25s ease;
+}
+
+.instagram-username:hover {
+    color: #fff;
+}
+
+.instagram-follow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #303030;
+    border-radius: 40px;
+    padding: 14px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: 0.3s ease;
+    background: transparent;
+    color: #fff;
+}
+
+.instagram-follow:hover {
+    background: #fff;
+    border-color: #fff;
+    color: #080808;
+    transform: translateY(-2px);
+}
+
+.instagram-icon {
+    width: 22px;
+    height: 22px;
+    display: block;
+    flex: none;
+}
+
+.instagram-posts {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.instagram-post {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid #292929;
+    background: #111;
+    display: block;
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.instagram-post:hover {
+    transform: translateY(-5px);
+    border-color: #555;
+}
+
+.instagram-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.instagram-post:hover .instagram-photo {
+    transform: scale(1.05);
+}
+
+.instagram-post::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 35%,
+            rgba(0, 0, 0, 0.15) 50%,
+            rgba(0, 0, 0, 0.92) 100%
+        );
+    pointer-events: none;
+}
+
+.instagram-caption {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    z-index: 2;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.45;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.instagram-caption strong {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.instagram-caption span {
+    color: #ddd;
+    font-size: 12px;
+}
+
+/* ============================================================
+   26. LOCALIZAÇÃO
+   ============================================================ */
+
+.location {
+    padding: 140px 9%;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            #1b160f 0%,
+            #0b0b0b 55%
+        );
+    color: #fff;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+}
+
+.location-content {
+    max-width: 700px;
+}
+
+.location h2 {
+    font-size: clamp(45px, 6vw, 75px);
+}
+
+.location p:not(.eyebrow) {
+    color: #ddd;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.location .muted {
+    font-size: 13px !important;
+    color: #777 !important;
+    margin-bottom: 30px !important;
+}
+
+/* ============================================================
+   27. CTA
+   ============================================================ */
+
+.cta {
+    padding: 120px 9%;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #1c1812 0%,
+            #0d0d0d 38%,
+            #080808 75%
+        );
+    color: #fff;
+}
+
+.cta > div {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta .eyebrow {
+    color: var(--gold);
+}
+
+.cta h2 {
+    color: #fff;
+    margin-bottom: 22px;
+}
+
+.cta p:not(.eyebrow) {
+    color: #999;
+    margin-bottom: 25px;
+}
+
+.cta .btn-light {
+    background: #fff;
+    color: #080808;
+    border: 1px solid #fff;
+}
+
+.cta .btn-light:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #080808;
+    transform: translateY(-2px);
+}
+
+.cta .btn-outline {
+    border: 1px solid #3a3a3a;
+    color: #fff;
+    background: transparent;
+}
+
+.cta .btn-outline:hover {
+    background: #fff;
+    border-color: #fff;
+    color: #080808;
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   28. FOOTER
+   ============================================================ */
+
+footer {
+    background: #080808;
+    color: #fff;
+    padding: 60px 7% 20px;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-main > p {
+    color: #777;
+    max-width: 280px;
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: #999;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    border-top: 1px solid #2c2c2c;
+    margin-top: 50px;
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+    font-size: 11px;
+}
+
+/* ============================================================
+   29. WHATSAPP FLUTUANTE
+   ============================================================ */
+
+.whatsapp {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #1f9d59;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    z-index: 30;
+    box-shadow: 0 10px 25px #0004;
+}
+
+/* ============================================================
+   30. LIGHTBOX
+   ============================================================ */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: #000d;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-content {
+    width: min(800px, 90%);
+    height: 70vh;
+    background: #111;
+    display: grid;
+    place-items: center;
+    color: #fff;
+}
+
+.lightbox button {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    background: none;
+    border: 0;
+    color: #fff;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+/* ============================================================
+   31. ANIMAÇÕES REVEAL
+   ============================================================ */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* ============================================================
+   32. PEDIDO DE ORAÇÃO
+   ============================================================ */
+
+.prayer-section {
+    width: 100%;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            #1b160e 0%,
+            #0b0b0b 60%
+        );
+    padding: 80px 200px;
+    color: #fff;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.prayer-container {
+    max-width: 2000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 50px;
+    align-items: center;
+}
+
+.prayer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.prayer-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 25px rgba(198, 164, 106, 0.2);
+}
+
+.prayer-description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #b3b3b3;
+    margin-bottom: 35px;
+    max-width: 480px;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    border: 1px solid var(--gold);
+    border-radius: 50px;
+    color: var(--gold);
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background: rgba(198, 164, 106, 0.1);
+    transform: translateY(-2px);
+}
+
+.prayer-card {
+    background: #141414;
+    border: 1px solid #242424;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.prayer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: #0c0c0c;
+    border: 1px solid #262626;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #555;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--gold);
+    color: #080808;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    background: var(--gold-soft);
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   33. CONTRIBUA / PIX
+   ============================================================ */
+
+.giving-section {
+    background: #0d0d0d;
+    padding: 90px 20px;
+    color: #fff;
+    text-align: center;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.giving-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.giving-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.giving-description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #a1a1a1;
+    max-width: 680px;
+    margin-bottom: 40px;
+}
+
+.pix-card {
+    background: #111;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.pix-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.pix-label {
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.pix-key {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    word-break: break-all;
+}
+
+.btn-copy-pix {
+    background: var(--gold);
+    color: #080808;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-copy-pix:hover {
+    background: var(--gold-soft);
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   34. RESPONSIVIDADE — TABLET
+   ============================================================ */
+
+@media (max-width: 1000px) {
+    .nav {
+        gap: 15px;
+    }
+
+    .header-button {
+        display: none;
+    }
+
+    .section {
+        gap: 5%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .instagram-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .instagram-posts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .revisao-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .revisao-card {
+        min-height: 440px;
+    }
+}
+
+/* ============================================================
+   35. RESPONSIVIDADE — CELULAR
+   ============================================================ */
+
+@media (max-width: 850px) {
+    .prayer-section {
+        width: 100%;
+        padding: 75px 7%;
+        overflow: hidden;
+    }
+
+    .prayer-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 45px;
+        align-items: stretch;
+    }
+
+    .prayer-info {
+        width: 100%;
+        max-width: 100%;
+        align-items: flex-start;
+    }
+
+    .prayer-title {
+        width: 100%;
+        font-size: clamp(2rem, 9vw, 2.4rem);
+        line-height: 1.15;
+        margin-bottom: 18px;
+    }
+
+    .prayer-description {
+        width: 100%;
+        max-width: 100%;
+        font-size: 1rem;
+        line-height: 1.65;
+        margin-bottom: 28px;
+    }
+
+    .btn-whatsapp {
+        max-width: 100%;
+        padding: 13px 24px;
+        font-size: 0.95rem;
+    }
+
+    .prayer-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 25px 20px;
+        margin: 0;
+    }
+
+    .prayer-form,
+    .form-group {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 760px) {
+    .header {
+        height: 70px;
+        padding: 0 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #0d0d0d;
+        display: none;
+        flex-direction: column;
+        padding: 20px 7%;
+        gap: 0;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav a {
+        padding: 14px 0;
+        border-bottom: 1px solid #252525;
+    }
+
+    .hero {
+        min-height: 680px;
+    }
+
+    .hero-content {
+        margin: 0 7%;
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn {
+        padding: 13px 19px;
+    }
+
+    .section {
+        padding: 80px 7%;
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .image-card {
+        height: 400px;
+    }
+
+    .image-badge {
+        right: 12px;
+    }
+
+    .dark-section,
+    .ministries {
+        padding: 80px 7%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: 220px;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-simple-card {
+        min-height: 170px;
+        padding: 26px;
+    }
+
+    .event-simple-card h3 {
+        font-size: 26px;
+    }
+
+    .event-actions {
+        flex-direction: column;
+    }
+
+    .event-action {
+        width: 100%;
+    }
+
+    .ministry-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ministry {
+        padding: 25px;
+    }
+
+    /* --------------------------------------------------------
+       REVISÃO DE VIDAS — CELULAR
+       -------------------------------------------------------- */
+
+    .revisao-vidas {
+        padding: 80px 7%;
+    }
+
+    .revisao-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .revisao-content {
+        max-width: 100%;
+    }
+
+    .revisao-content h2 {
+        font-size: clamp(46px, 13vw, 64px);
+        margin-bottom: 22px;
+    }
+
+    .revisao-subtitle {
+        font-size: 18px;
+    }
+
+    .revisao-text {
+        font-size: 15px;
+        margin-bottom: 28px;
+    }
+
+    .btn-revisao {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .revisao-visual {
+        width: 100%;
+    }
+
+    .revisao-card {
+        width: 100%;
+        max-width: 420px;
+        min-height: 430px;
+        margin: 0 auto;
+        padding: 25px;
+    }
+
+    .revisao-card-center h3 {
+        font-size: 48px;
+    }
+
+    .instagram-section {
+        padding: 80px 6%;
+    }
+
+    .instagram-header {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+
+    .instagram-title h2 {
+        font-size: 52px;
+    }
+
+    .instagram-follow {
+        align-self: flex-start;
+    }
+
+    .instagram-posts {
+        display: flex;
+        overflow-x: auto;
+        gap: 12px;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .instagram-posts::-webkit-scrollbar {
+        display: none;
+    }
+
+    .instagram-post {
+        flex: 0 0 78vw;
+        max-width: 330px;
+        height: 390px;
+        scroll-snap-align: start;
+    }
+
+    .gallery-section {
+        padding: 80px 5%;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 180px;
+    }
+
+    .g1 {
+        grid-row: span 2;
+    }
+
+    .location {
+        padding: 90px 7%;
+        min-height: 500px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .logo strong {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .giving-title {
+        font-size: 2rem;
+    }
+
+    .pix-card {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .pix-info {
+        align-items: center;
+    }
+
+    .btn-copy-pix {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* ============================================================
+   36. CELULARES PEQUENOS
+   ============================================================ */
+
+@media (max-width: 430px) {
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .ministry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-auto-rows: 150px;
+    }
+
+    .instagram-title h2 {
+        font-size: 45px;
+    }
+
+    .instagram-username {
+        font-size: 14px;
+    }
+
+    .instagram-post {
+        flex-basis: 82vw;
+        height: 380px;
+    }
+
+    .revisao-vidas {
+        padding: 70px 6%;
+    }
+
+    .revisao-content h2 {
+        font-size: 45px;
+    }
+
+    .revisao-subtitle {
+        font-size: 17px;
+    }
+
+    .btn-revisao {
+        max-width: 100%;
+    }
+
+    .revisao-card {
+        min-height: 390px;
+        padding: 22px;
+    }
+
+    .revisao-card-center h3 {
+        font-size: 43px;
+    }
+
+    .revisao-card::before {
+        width: 210px;
+        height: 210px;
+    }
+
+    .revisao-card::after {
+        width: 135px;
+        height: 135px;
+    }
+
+    .prayer-section {
+        padding: 65px 6%;
+    }
+
+    .prayer-container {
+        gap: 38px;
+    }
+
+    .prayer-title {
+        font-size: 2rem;
+    }
+
+    .prayer-description {
+        font-size: 0.98rem;
+        line-height: 1.65;
+    }
+
+    .btn-whatsapp {
+        align-self: flex-start;
+        padding: 12px 22px;
+    }
+
+    .prayer-card {
+        padding: 22px 18px;
+        border-radius: 14px;
+    }
+
+    .form-group label {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================================
+   FIM DO CSS — SARA PIRAJUSSARA
+   ============================================================ */
+
+/* ============================================================
+   EVENTOS ESPECIAIS / EVENTOS MENSAIS
+
+   Esta seção foi criada para destacar eventos que acontecem
+   uma vez por mês, sem deixar o visual exagerado.
+   ============================================================ */
+
+.monthly-events-section {
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+
+.monthly-events-container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+}
+
+/* ------------------------------------------------------------
+   CABEÇALHO DOS EVENTOS
+   ------------------------------------------------------------ */
+
+.monthly-events-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+    gap: 70px;
+    align-items: end;
+    margin-bottom: 55px;
+}
+
+.monthly-events-heading .eyebrow {
+    margin-bottom: 20px;
+    color: var(--gold);
+}
+
+.monthly-events-heading h2 {
+    max-width: 720px;
+    margin: 0;
+    color: #fff;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 400;
+    line-height: .98;
+    letter-spacing: -2px;
+}
+
+.monthly-events-heading h2 span {
+    display: block;
+    color: var(--gold);
+}
+
+.monthly-events-intro {
+    max-width: 400px;
+    margin: 0;
+    color: #909090;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ------------------------------------------------------------
+   GRID
+   ------------------------------------------------------------ */
+
+.monthly-events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* ------------------------------------------------------------
+   CARD
+   ------------------------------------------------------------ */
+
+.monthly-event-card {
+    position: relative;
+    min-height: 410px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #303030;
+    background: #141414;
+    transition: transform .3s ease, border-color .3s ease, background .3s ease;
+}
+
+/* Pequena linha dourada, sem brilho exagerado */
+.monthly-event-card::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 30px;
+    width: 55px;
+    height: 2px;
+    background: var(--gold);
+    transition: width .3s ease;
+}
+
+.monthly-event-card:hover {
+    transform: translateY(-5px);
+    border-color: #5d4d32;
+    background: #171717;
+}
+
+.monthly-event-card:hover::before {
+    width: 80px;
+}
+
+/* ------------------------------------------------------------
+   CARD DE DESTAQUE
+
+   O destaque é propositalmente discreto: apenas uma borda
+   dourada e um fundo levemente diferente.
+   ------------------------------------------------------------ */
+
+.monthly-event-featured {
+    border-color: #665536;
+    background: #171614;
+}
+
+.monthly-event-featured::before {
+    width: 80px;
+}
+
+/* ------------------------------------------------------------
+   TOPO DO CARD
+   ------------------------------------------------------------ */
+
+.monthly-event-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.monthly-event-month {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.monthly-event-index {
+    color: #555;
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+}
+
+/* ------------------------------------------------------------
+   DATA
+   ------------------------------------------------------------ */
+
+.monthly-event-date {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.monthly-event-date strong {
+    color: #fff;
+    font-family: "Playfair Display", serif;
+    font-size: 68px;
+    font-weight: 400;
+    line-height: .9;
+}
+
+.monthly-event-date span {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* ------------------------------------------------------------
+   CONTEÚDO
+   ------------------------------------------------------------ */
+
+.monthly-event-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.monthly-event-content h3 {
+    margin: 0 0 8px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.monthly-event-time {
+    margin: 0 0 17px;
+    color: #ddd;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.monthly-event-content > p:not(.monthly-event-time) {
+    max-width: 330px;
+    margin: 0;
+    color: #999;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: 0.1px;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* ------------------------------------------------------------
+   BOTÃO
+   ------------------------------------------------------------ */
+
+.monthly-event-button {
+    width: fit-content;
+    margin-top: auto;
+    padding: 12px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid #464646;
+    color: #fff;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: background .3s ease, border-color .3s ease, color .3s ease;
+}
+
+.monthly-event-button span {
+    color: var(--gold);
+    font-size: 17px;
+    line-height: 1;
+    transition: transform .3s ease;
+}
+
+.monthly-event-button:hover {
+    border-color: var(--gold);
+    background: var(--gold);
+    color: #101010;
+}
+
+.monthly-event-button:hover span {
+    color: #101010;
+    transform: translateX(3px);
+}
+
+.monthly-event-featured .monthly-event-button {
+    border-color: var(--gold);
+    background: var(--gold);
+    color: #101010;
+}
+
+.monthly-event-featured .monthly-event-button span {
+    color: #101010;
+}
+
+.monthly-event-featured .monthly-event-button:hover {
+    background: transparent;
+    color: #fff;
+}
+
+.monthly-event-featured .monthly-event-button:hover span {
+    color: var(--gold);
+}
+
+/* ------------------------------------------------------------
+   TABLET
+   ------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+    .monthly-events-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .monthly-events-heading {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 45px;
+    }
+
+    .monthly-events-intro {
+        max-width: 620px;
+    }
+
+    .monthly-events-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .monthly-event-card:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ------------------------------------------------------------
+   CELULAR
+   ------------------------------------------------------------ */
+
+@media (max-width: 650px) {
+    .monthly-events-section {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .monthly-events-container {
+        width: min(100% - 36px, 500px);
+    }
+
+    .monthly-events-heading {
+        margin-bottom: 35px;
+    }
+
+    .monthly-events-heading h2 {
+        font-size: 40px;
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+
+    .monthly-events-intro {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .monthly-events-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .monthly-event-card,
+    .monthly-event-card:last-child {
+        grid-column: auto;
+        min-height: 380px;
+        padding: 26px;
+    }
+
+    .monthly-event-date strong {
+        font-size: 58px;
+    }
+
+    .monthly-event-content h3 {
+        font-size: 22px;
+    }
+}
+
+/* ------------------------------------------------------------
+   CELULARES PEQUENOS
+   ------------------------------------------------------------ */
+
+@media (max-width: 400px) {
+    .monthly-events-heading h2 {
+        font-size: 35px;
+    }
+
+    .monthly-event-card,
+    .monthly-event-card:last-child {
+        min-height: 365px;
+        padding: 23px;
+    }
+
+    .monthly-event-date strong {
+        font-size: 54px;
+    }
+}
+
+/* ============================================================
+   IMAGENS GERENCIADAS PELO PAINEL ADMINISTRATIVO
+   ============================================================ */
+
+.photo.photo-1 {
+    position: relative;
+    overflow: hidden;
+    background: #111 !important;
+}
+
+.photo.photo-1 .site-managed-image {
+    width: 100%;
+    height: 100%;
+    display: none;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+}
+
+.revisao-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: #111 !important;
+}
+
+.revisao-card .site-managed-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+}
+
+.revisao-card::before {
+    z-index: -1 !important;
+    background: linear-gradient(
+        180deg,
+        rgba(0,0,0,.30),
+        rgba(0,0,0,.72)
+    ) !important;
+}
+
+.revisao-card::after {
+    z-index: -1 !important;
+}
+
+.revisao-card-top,
+.revisao-card-center,
+.revisao-card-bottom {
+    position: relative;
+    z-index: 2;
+}
+/* ============================================================
+   FOTOS GERENCIADAS PELO ADM
+   ============================================================ */
+
+/* FOTO SOBRE NÓS */
+
+.photo-1 {
+    position: relative;
+    overflow: hidden;
+    background: #111 !important;
+}
+
+.photo-1 .site-managed-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    z-index: 1;
+}
+
+
+/* FOTO REVISÃO DE VIDAS */
+
+.revisao-card {
+    position: relative;
+    overflow: hidden;
+    background: #111 !important;
+}
+
+.revisao-card .revisao-managed-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    z-index: 1;
+}
+
+
+/* Escurece levemente a foto para manter os textos legíveis */
+
+.revisao-card::before {
+    z-index: 2;
+    pointer-events: none;
+}
+
+.revisao-card::after {
+    z-index: 2;
+    pointer-events: none;
+}
+
+.revisao-card-top,
+.revisao-card-center,
+.revisao-card-bottom {
+    position: relative;
+    z-index: 3;
+}

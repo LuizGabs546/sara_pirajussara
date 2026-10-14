@@ -1,0 +1,570 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: "DM Sans", sans-serif;
+    background: #f4f2ee;
+    color: #171717;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* ============================================================
+   LOGIN
+============================================================ */
+
+.login-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: #101010;
+}
+
+
+.login-card {
+    width: min(440px, 100%);
+    background: #fff;
+    padding: 42px;
+    border-radius: 20px;
+    box-shadow: 0 24px 80px #0006;
+}
+
+
+.logo {
+    width: 150px;
+    max-height: 70px;
+    object-fit: contain;
+    margin-bottom: 24px;
+}
+
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: .18em;
+    font-weight: 700;
+    color: #9b7a43;
+}
+
+
+.login-card h1,
+.page h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 38px;
+    margin: 8px 0;
+}
+
+
+.muted {
+    color: #777;
+    line-height: 1.6;
+}
+
+
+.login-card form {
+    display: grid;
+    gap: 16px;
+    margin-top: 26px;
+}
+
+
+.login-card label,
+.grid-form label {
+    display: grid;
+    gap: 7px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+.login-card input,
+.grid-form input,
+.grid-form textarea,
+.grid-form select,
+.prayer select,
+.site-image-actions input {
+    font: inherit;
+    border: 1px solid #d8d2c8;
+    border-radius: 10px;
+    padding: 12px;
+    background: #fff;
+}
+
+
+.login-card button,
+.page-head > button,
+.actions button,
+.site-image-actions button {
+    border: 0;
+    border-radius: 10px;
+    background: #b08b52;
+    color: #fff;
+    padding: 12px 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+.login-card button:hover,
+.page-head > button:hover,
+.actions button:hover,
+.site-image-actions button:hover {
+    opacity: .9;
+}
+
+
+.error {
+    color: #a12626;
+}
+
+
+/* ============================================================
+   APP
+============================================================ */
+
+.app {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+}
+
+
+.sidebar {
+    background: #111;
+    color: #fff;
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.sidebar .logo {
+    filter: brightness(0) invert(1);
+    margin: 0 auto 35px;
+}
+
+
+.user-info {
+    font-size: 12px;
+    color: #bbb;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    word-break: break-word;
+}
+
+
+.sidebar nav {
+    display: grid;
+    gap: 8px;
+}
+
+
+.nav-btn,
+.logout {
+    border: 0;
+    background: transparent;
+    color: #ccc;
+    text-align: left;
+    padding: 13px;
+    border-radius: 9px;
+    cursor: pointer;
+    font: inherit;
+}
+
+
+.nav-btn.active,
+.nav-btn:hover {
+    background: #29251f;
+    color: #fff;
+}
+
+
+.logout {
+    margin-top: auto;
+    color: #aaa;
+}
+
+
+.main {
+    padding: 42px;
+    max-width: 1250px;
+    width: 100%;
+    margin: auto;
+}
+
+
+.page-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-end;
+    margin-bottom: 28px;
+}
+
+
+.page-head h1 {
+    font-size: 44px;
+}
+
+
+/* ============================================================
+   PAINÉIS
+============================================================ */
+
+.panel {
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 28px;
+    border: 1px solid #e4dfd6;
+}
+
+
+.panel h2 {
+    font-family: "Playfair Display", serif;
+}
+
+
+.grid-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 16px;
+}
+
+
+.grid-form .full {
+    grid-column: 1 / -1;
+}
+
+
+.grid-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+.check {
+    display: flex !important;
+    align-items: center;
+    grid-template-columns: auto 1fr !important;
+}
+
+
+.check input {
+    width: auto;
+}
+
+
+.actions {
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+}
+
+
+.actions .secondary {
+    background: #eee;
+    color: #222;
+}
+
+
+.actions .danger {
+    background: #8f3030;
+}
+
+
+/* ============================================================
+   CARDS DE EVENTOS
+============================================================ */
+
+.cards,
+.prayers {
+    display: grid;
+    gap: 14px;
+}
+
+
+.card,
+.prayer {
+    background: #fff;
+    border: 1px solid #e4dfd6;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+
+.card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    margin: 8px 0;
+}
+
+
+.card p,
+.prayer p {
+    color: #666;
+    line-height: 1.6;
+    margin: 6px 0;
+}
+
+
+.tag {
+    font-size: 11px;
+    letter-spacing: .12em;
+    color: #9b7a43;
+    font-weight: 700;
+}
+
+
+.card small {
+    color: #999;
+}
+
+
+.prayer {
+    align-items: flex-start;
+}
+
+
+.prayer-meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.prayer-meta span {
+    font-size: 12px;
+    color: #999;
+}
+
+
+.prayer select {
+    padding: 9px;
+}
+
+
+.empty {
+    padding: 50px;
+    text-align: center;
+    color: #888;
+    background: #fff;
+    border-radius: 15px;
+    border: 1px dashed #d8d2c8;
+}
+
+
+/* ============================================================
+   FOTOS DO SITE
+============================================================ */
+
+.site-images-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+.site-image-card {
+    background: #fff;
+    border: 1px solid #e4dfd6;
+    border-radius: 18px;
+    padding: 22px;
+}
+
+
+.site-image-info h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    margin: 9px 0;
+}
+
+
+.site-image-info p {
+    color: #777;
+    line-height: 1.6;
+    margin: 0 0 20px;
+}
+
+
+.site-image-preview-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #111;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+
+.site-image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.site-image-placeholder {
+    color: #aaa;
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+}
+
+
+.site-image-actions {
+    margin-top: 18px;
+    display: grid;
+    gap: 12px;
+}
+
+
+.site-image-actions input {
+    width: 100%;
+    cursor: pointer;
+}
+
+
+.site-image-actions button {
+    width: 100%;
+}
+
+
+.image-status {
+    min-height: 20px;
+    margin: 0;
+    font-size: 13px;
+    color: #777;
+}
+
+
+.image-status.success {
+    color: #357a43;
+}
+
+
+.image-status.error {
+    color: #a12626;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 900px) {
+
+    .site-images-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .app {
+        display: block;
+    }
+
+
+    .sidebar {
+        min-height: auto;
+    }
+
+
+    .sidebar .logo {
+        margin: 0 0 18px;
+    }
+
+
+    .sidebar nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    .logout {
+        margin-top: 10px;
+    }
+
+
+    .main {
+        padding: 22px;
+    }
+
+
+    .page-head {
+        display: block;
+    }
+
+
+    .page-head > button {
+        margin-top: 15px;
+    }
+
+
+    .grid-form {
+        grid-template-columns: 1fr;
+    }
+
+
+    .grid-form .full {
+        grid-column: auto;
+    }
+
+
+    .card,
+    .prayer {
+        display: grid;
+    }
+
+
+    .login-card {
+        padding: 30px;
+    }
+
+
+    .page h1 {
+        font-size: 36px;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .site-image-card {
+        padding: 16px;
+    }
+
+
+    .main {
+        padding: 16px;
+    }
+
+}
